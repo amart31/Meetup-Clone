@@ -1,6 +1,63 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			meetups: [
+				{
+					name: "4Geeks",
+					imgurl: "https://via.placeholder.com/800x500.png",
+					description:
+						"International Bootcamp dedicated to training the next generation of web developers.",
+					founded: "2010",
+					location: "Miami, FL"
+				},
+				{
+					name: "< Freelancers_United /> ",
+					imgurl: "https://via.placeholder.com/800x500.png",
+					description:
+						"Group of freelancers who come together to discuss the latest technologies and network within the industry at large.",
+					founded: "2018",
+					location: "Miami, FL"
+				},
+				{
+					name: "South Florida Developers",
+					imgurl: "https://via.placeholder.com/800x500.png",
+					description:
+						"Informal gathering for those in the larger tech community of South Florida, we come together to discuss a wide array of topics and subjects, open to everyone.",
+					founded: "2018",
+					location: "Miami, FL"
+				}
+			],
+
+			events: [
+				/*{
+					title: "Event 1",
+					imgurl: "https://via.placeholder.com/800x500.png",
+					description:
+						"Freelancers networking event with opportunities to ask questions and expand knowledge base.",
+					date: "March 22",
+					time: "9 am",
+					meetup: "4Geeks"
+				},
+				{
+					title: "Event 2",
+					imgurl: "https://via.placeholder.com/728x90.png",
+					description:
+						"Freelancers networking event with opportunities to ask questions and expand knowledge base.",
+					date: "March 27",
+					time: "7 am",
+					meetup: "4Geeks"
+				},
+				{
+					title: "Event 3",
+					imgurl: "https://via.placeholder.com/728x90.png",
+					description:
+						"Freelancers networking event with opportunities to ask questions and expand knowledge base.",
+					date: "April 2",
+					time: "8 pm",
+					meetup: "4Geeks"
+				} */
+			],
+
 			demo: [
 				{
 					title: "FIRST",
