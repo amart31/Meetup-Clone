@@ -1,7 +1,12 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			menu: [
+				{ label: "Events", url: "/" },
+				{ label: "Meetups", url: "/meetups" }
+			],
 			meetups: [
+				/*
 				{
 					name: "4Geeks",
 					imgurl: "https://via.placeholder.com/800x500.png",
@@ -26,6 +31,7 @@ const getState = ({ getStore, setStore }) => {
 					founded: "2018",
 					location: "Miami, FL"
 				}
+				*/
 			],
 
 			events: [

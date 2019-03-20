@@ -37,6 +37,30 @@ const Store = PassedComponent => {
 				.catch(err => {
 					alert("Fetch error: ", err);
 				});
+
+			fetch("https://assets.breatheco.de/apis/fake/meetup/meetups")
+				.then(response => {
+					if (response.status !== 200) {
+						alert("Connection error, status " + response.status);
+						return;
+					}
+
+					response.json().then(data => {
+						let store = this.state.store;
+						store.meetups = data;
+
+						let meetup = store.meetups.find((ID, index) => {
+							if (store.meetups < 0) {
+								return meetup;
+							}
+						});
+
+						this.setState({ store });
+					});
+				})
+				.catch(err => {
+					alert("Fetch error: ", err);
+				});
 		}
 
 		render() {
