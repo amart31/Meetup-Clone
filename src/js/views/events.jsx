@@ -42,7 +42,11 @@ export class Events extends React.Component {
 										</div>
 										<div className="card-body d-inline-flex justify-content-start">
 											<p className="card-text mr-3">
-												{item.meta_keys.time}
+												<Moment
+													format="LT"
+													parse="HH:mm:ss">
+													{item.meta_keys.time}
+												</Moment>
 											</p>
 											<div className="d-block ml-3">
 												<Link to={"/event/" + index}>

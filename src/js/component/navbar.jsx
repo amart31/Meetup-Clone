@@ -9,7 +9,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
 			<a className="navbar-brand mr-3" href="/">
-				<img src={Logo} width="50" height="50" alt="" />
+				<img src={Logo} width="50" height="50" alt="logo" />
 			</a>
 
 			<form className="form-inline ml-3">
