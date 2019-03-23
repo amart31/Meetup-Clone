@@ -54,9 +54,13 @@ export class Events extends React.Component {
 														{item.post_title}
 													</h5>
 												</Link>
-												<Link to={"/event/" + index}>
+												<Link
+													to={
+														"/meetup/" +
+														item.meta_keys._meetup
+													}>
 													<h6 className="card-subtitle">
-														{item.meta_keys.meetup}
+														{item.meta_keys._meetup}
 													</h6>
 												</Link>
 											</div>

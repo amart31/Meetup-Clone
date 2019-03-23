@@ -11,7 +11,7 @@ export class Event extends React.Component {
 		return (
 			<div className="container-fluid">
 				<Context.Consumer>
-					{({ store }) => {
+					{({ store, actions }) => {
 						return (
 							<div className="container">
 								<div className="jumbotron jumbotron-fluid mt-2 text-light bg-dark">

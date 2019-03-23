@@ -5,6 +5,8 @@ import ScrollToTop from "./component/functional/scrollToTop.jsx";
 import { Meetups } from "./views/meetups.jsx";
 import { Events } from "./views/events.jsx";
 import { Event } from "./views/event.jsx";
+import { Meetup } from "./views/meetup.jsx";
+
 import Store from "./store/appContext.jsx";
 
 import { Navbar } from "./component/navbar.jsx";
@@ -22,6 +24,10 @@ export class Layout extends React.Component {
 								<Route exact path="/" component={Events} />
 								<Route path="/meetups" component={Meetups} />
 								<Route path="/event/:theid" component={Event} />
+								<Route
+									path="/meetup/:theid"
+									component={Meetup}
+								/>
 								<Route render={() => <h1>Not found!</h1>} />
 							</Switch>
 							<Footer />
