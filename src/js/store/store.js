@@ -18,12 +18,15 @@ const getState = ({ getStore, setStore }) => {
 				return events;
 			},
 
-			findMeetUp: (itemID, index) => {
+			getMeetupName: meetupId => {
 				const store = getStore();
 
-				if (store.events._meetup == store.meetups.ID) {
-					let meetupId = store.meetups.post_title;
-					return meetupId;
+				let meetupArr = store.meetups.filter(meetup => {
+					if (meetupId == meetup.ID) return meetup.post_title;
+				});
+
+				if (meetupArr !== []) {
+					return meetupArr[0];
 				}
 			}
 		}

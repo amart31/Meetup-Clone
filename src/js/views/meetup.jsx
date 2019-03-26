@@ -12,7 +12,7 @@ export class Meetup extends React.Component {
 			<div className="container">
 				<div className="container-fluid">
 					<Context.Consumer>
-						{({ store }) => {
+						{({ store, actions }) => {
 							return (
 								<div className="container">
 									<div className="jumbotron jumbotron-fluid mt-2 text-light bg-dark">
@@ -48,7 +48,7 @@ export class Meetup extends React.Component {
 						}}
 					</Context.Consumer>
 				</div>
-				<div className="d-flex flex-row justify-content-center">
+				<div className="container-fluid">
 					<Context.Consumer>
 						{({ store, actions }) => {
 							return actions
@@ -96,9 +96,11 @@ export class Meetup extends React.Component {
 															}>
 															<h6 className="card-subtitle">
 																{
-																	item
-																		.meta_keys
-																		._meetup
+																	actions.getMeetupName(
+																		item
+																			.meta_keys
+																			._meetup
+																	).post_title
 																}
 															</h6>
 														</Link>

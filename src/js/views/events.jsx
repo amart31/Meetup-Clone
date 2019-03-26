@@ -2,6 +2,7 @@ import React from "react";
 import Moment from "react-moment";
 import "moment-timezone";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import { Context } from "../store/appContext.jsx";
 
@@ -11,7 +12,7 @@ export class Events extends React.Component {
 	render() {
 		return (
 			<div className="container-fluid">
-				<div className="jumbotron jumbotron-fluid bg-dark">
+				<div className="jumbotron jumbotron-fluid text-light bg-dark mt-2">
 					<div className="container" style={{ height: "10rem" }}>
 						<div className="text-center">
 							<h1 className="display-4">The Meetup Clone</h1>
@@ -60,7 +61,12 @@ export class Events extends React.Component {
 														item.meta_keys._meetup
 													}>
 													<h6 className="card-subtitle">
-														{item.meta_keys._meetup}
+														{
+															actions.getMeetupName(
+																item.meta_keys
+																	._meetup
+															).post_title
+														}
 													</h6>
 												</Link>
 											</div>
@@ -80,3 +86,7 @@ export class Events extends React.Component {
 		);
 	}
 }
+
+Events.propTypes = {
+	match: PropTypes.object
+};
