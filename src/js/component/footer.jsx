@@ -4,7 +4,7 @@ import "../../styles/footer.css";
 
 export const Footer = () => {
 	return (
-		<footer className="footer mb-2">
+		<footer className="footer mt-2 p-2 bg-dark">
 			<div className="container d-inline-flex justify-content-end">
 				<Link to="/">
 					<span>Events</span>

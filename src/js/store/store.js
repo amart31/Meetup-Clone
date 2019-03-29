@@ -18,7 +18,7 @@ const getState = ({ getStore, setStore }) => {
 				return events;
 			},
 
-			getMeetupName: meetupId => {
+			getMeetupName: (meetupId, index) => {
 				const store = getStore();
 
 				let meetupArr = store.meetups.filter(meetup => {

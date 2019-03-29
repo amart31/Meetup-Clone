@@ -9,7 +9,7 @@ export class Meetups extends React.Component {
 	render() {
 		return (
 			<div className="container-fluid">
-				<div className="jumbotron jumbotron-fluid bg-dark">
+				<div className="jumbotron jumbotron-fluid text-light bg-dark mt-2">
 					<div className="container" style={{ height: "10rem" }}>
 						<div className="text-center">
 							<h1 className="display-4">The Meetup Clone</h1>

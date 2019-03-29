@@ -1,6 +1,7 @@
 import React from "react";
 import { Context } from "../store/appContext.jsx";
 import { Link } from "react-router-dom";
+import { ModalLogin } from "./functional/modalLogin.jsx";
 
 import Logo from "../../img/logo1.jpg";
 
@@ -12,11 +13,7 @@ export const Navbar = () => {
 				<img src={Logo} width="50" height="50" alt="logo" />
 			</a>
 
-			<form className="form-inline ml-3">
-				<button className="btn btn-outline-success" type="button">
-					Log In
-				</button>
-			</form>
+			<ModalLogin />
 		</nav>
 	);
 };

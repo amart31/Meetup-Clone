@@ -5,6 +5,7 @@ export const Context = React.createContext(null);
 
 const Store = PassedComponent => {
 	class StoreWrapper extends React.Component {
+		_isMounted = false;
 		constructor(props) {
 			super(props);
 			this.state = getState({
@@ -17,6 +18,8 @@ const Store = PassedComponent => {
 		}
 
 		componentDidMount() {
+			this._isMounted = true;
+
 			// this function is the equivalent to "window.onLoad"
 			// it only run once on the entire application lifetime
 			// you should do your ajax requests here
@@ -61,6 +64,10 @@ const Store = PassedComponent => {
 				.catch(err => {
 					alert("Fetch error: ", err);
 				});
+		}
+
+		componentWillUnmount() {
+			this._isMounted = false;
 		}
 
 		render() {

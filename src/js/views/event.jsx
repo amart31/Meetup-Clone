@@ -9,7 +9,7 @@ import "moment-timezone";
 export class Event extends React.Component {
 	render() {
 		return (
-			<div className="container-fluid">
+			<div className="container">
 				<Context.Consumer>
 					{({ store, actions }) => {
 						return (
