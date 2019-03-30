@@ -24,6 +24,11 @@ export class ModalLogin extends React.Component {
 	handleSaveClicked = e => {
 		alert("Save button was clicked");
 	};
+
+	componentDidMount() {
+		Modal.setAppElement("body");
+	}
+
 	componentWillUnmount() {
 		this._isMounted = false;
 	}
@@ -39,7 +44,6 @@ export class ModalLogin extends React.Component {
 				</button>
 				<Modal
 					className="Modal__Bootstrap modal-dialog"
-					closeTimeoutMS={150}
 					isOpen={this.state.modalIsOpen}
 					onRequestClose={this.handleModalCloseRequest}>
 					<div className="modal-content">
@@ -53,11 +57,7 @@ export class ModalLogin extends React.Component {
 								<span className="sr-only">Close</span>
 							</button>
 						</div>
-						<div className="modal-body">
-							<h4>email</h4>
-							<p>email</p>
-							<p>email</p>
-						</div>
+						<div className="modal-body" />
 						<div className="modal-footer">
 							<button
 								type="button"
