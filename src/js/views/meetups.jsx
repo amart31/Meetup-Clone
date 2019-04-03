@@ -36,9 +36,11 @@ export class Meetups extends React.Component {
 											width: "30rem",
 											height: "10rem"
 										}}>
-										<div className="card-header">
-											{item.post_title}
-										</div>
+										<Link to={"/meetup/" + item.ID}>
+											<div className="card-header">
+												{item.post_title}
+											</div>
+										</Link>
 										<div className="card-body d-inline-flex justify-content-start">
 											<p className="card-text mr-3">
 												{item.post_content}

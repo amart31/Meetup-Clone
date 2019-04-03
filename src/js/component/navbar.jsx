@@ -23,6 +23,7 @@ export class Navbar extends React.Component {
 	handleCloseModal() {
 		this.setState({ showModal: false });
 	}
+
 	render() {
 		//this methods says how the NavBar should look like in HTML
 		return (

@@ -6,6 +6,7 @@ import { Meetups } from "./views/meetups.jsx";
 import { Events } from "./views/events.jsx";
 import { Event } from "./views/event.jsx";
 import { Meetup } from "./views/meetup.jsx";
+import { LoginSignUp } from "./views/login.jsx";
 
 import Store from "./store/appContext.jsx";
 
@@ -24,6 +25,8 @@ export class Layout extends React.Component {
 								<Route exact path="/" component={Events} />
 								<Route path="/meetups" component={Meetups} />
 								<Route path="/event/:theid" component={Event} />
+								<Route path="/login" component={LoginSignUp} />
+
 								<Route
 									path="/meetup/:theid"
 									component={Meetup}

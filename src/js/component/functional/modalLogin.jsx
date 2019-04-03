@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import { Login } from "../../views/login.jsx";
 
 export class ModalLogin extends React.Component {
 	constructor(props) {
@@ -58,6 +59,7 @@ export class ModalLogin extends React.Component {
 							</button>
 						</div>
 						<div className="modal-body" />
+						<Login />
 						<div className="modal-footer">
 							<button
 								type="button"

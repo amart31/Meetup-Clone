@@ -13,7 +13,9 @@ export class Events extends React.Component {
 		return (
 			<div className="container-fluid">
 				<div className="jumbotron jumbotron-fluid text-light bg-dark mt-2">
-					<div className="container" style={{ height: "10rem" }}>
+					<div
+						className="container-fluid"
+						style={{ height: "10rem" }}>
 						<div className="text-center">
 							<h1 className="display-4">The Meetup Clone</h1>
 							<p className="lead">
@@ -65,7 +67,7 @@ export class Events extends React.Component {
 															actions.getMeetupName(
 																item.meta_keys
 																	._meetup
-															).post_title
+															)["post_title"]
 														}
 													</h6>
 												</Link>

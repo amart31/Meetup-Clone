@@ -20,10 +20,7 @@ export class Meetup extends React.Component {
 											<div className="d-flex flex-row-reverse justify-content-between">
 												<div className="p-2">
 													<h1 className="display-4">
-														{
-															store.meetups
-																.post_title
-														}
+														Meetup Name
 													</h1>
 													<p className="lead">
 														Miami, FL
@@ -92,7 +89,8 @@ export class Meetup extends React.Component {
 														<Link
 															to={
 																"/meetup/" +
-																index
+																item.meta_keys
+																	._meetup
 															}>
 															<h6 className="card-subtitle">
 																{
