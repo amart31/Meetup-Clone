@@ -67,7 +67,7 @@ export class Events extends React.Component {
 															actions.getMeetupName(
 																item.meta_keys
 																	._meetup
-															)["post_title"]
+															).post_title
 														}
 													</h6>
 												</Link>

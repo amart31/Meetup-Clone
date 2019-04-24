@@ -2,12 +2,57 @@ const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
 			meetups: [],
-
 			events: [],
-
-			meetupEvents: []
+			meetupEvents: [],
+			session: {
+				isLoggedIn: false,
+				token: "",
+				user_display_name: "",
+				user_email: "",
+				user_nicename: ""
+			}
 		},
 		actions: {
+			login: (user, pass) => {
+				const endpoint =
+					"https://wordpress-project-amart31.c9users.io/wp-json/jwt-auth/v1/token";
+
+				//fetch session
+				fetch(endpoint, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						username: user,
+						password: pass
+					})
+				})
+					.then(res => {
+						if (res.status !== 200) {
+							console.log("error " + res.status);
+							return;
+						}
+						res.json().then(data => {
+							let store = getStore();
+
+							store.session = data;
+							store.session.isLoggedIn = true;
+							setStore({
+								store
+							});
+						});
+					})
+					.catch(err => {
+						alert("Fetch error: ", err);
+					});
+			},
+
+			switchPanel: newPanel => {
+				this.setState({
+					activePanel: newPanel
+				});
+			},
 			meetupEventsList: (meetupID, index) => {
 				const store = getStore();
 

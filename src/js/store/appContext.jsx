@@ -7,6 +7,7 @@ const Store = PassedComponent => {
 	class StoreWrapper extends React.Component {
 		constructor(props) {
 			super(props);
+
 			this.showModal = false;
 			this.state = getState({
 				getStore: () => this.state.store,

@@ -2,10 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../../styles/login.scss";
 
-//FormPRovider holds state, available to FormConsumer
-const FormContext = React.createContext({});
-const FormProvider = FormContext.Provider;
-const FormConsumer = FormContext.Consumer;
+import { Context } from "../store/appContext.jsx";
 
 class Form extends React.Component {
 	state = {
@@ -15,20 +12,10 @@ class Form extends React.Component {
 	render() {
 		return (
 			//declare state that determines active panel & method to switch panels
+
 			<React.Fragment>
-				<FormProvider
-					value={{
-						activePanel: this.state.activePanel,
-						actions: {
-							switchPanel: newPanel => {
-								this.setState({
-									activePanel: newPanel
-								});
-							}
-						}
-					}}>
-					{this.props.children}
-				</FormProvider>
+				{this.props.children}
+				<LoginSignUp />
 			</React.Fragment>
 		);
 	}
@@ -36,25 +23,25 @@ class Form extends React.Component {
 //handles displaying the panels
 const FormPanel = props => {
 	return (
-		<FormConsumer>
+		<Context.Consumer>
 			{({ activePanel }) =>
 				activePanel === props.isActive ? props.children : null
 			}
-		</FormConsumer>
+		</Context.Consumer>
 	);
 };
 /*panels id passed as props used to set activePanel to swap forms
 above the FormPanel component runs the ternary to see if true */
 const Panel = props => (
-	<FormConsumer>
-		{({ actions }) => {
+	<Context.Consumer>
+		{({ actions, store }) => {
 			return (
 				<div onClick={() => actions.switchPanel(props.id)}>
 					{props.children}
 				</div>
 			);
 		}}
-	</FormConsumer>
+	</Context.Consumer>
 );
 
 export const Login = () => {
@@ -89,7 +76,7 @@ export const Login = () => {
 	);
 };
 
-const SignUp = () => {
+export const SignUp = () => {
 	return (
 		<React.Fragment>
 			<div id="sign-up-tab-content" className="active tabs-content">
@@ -143,16 +130,17 @@ export const LoginSignUp = () => {
 };
 
 Form.propTypes = {
-	children: PropTypes.object
+	children: PropTypes.symbol
 };
 FormPanel.propTypes = {
 	isActive: PropTypes.bool,
-	children: PropTypes.object
+	children: PropTypes.symbol
 };
 Panel.propTypes = {
 	id: PropTypes.string,
-	children: PropTypes.object
+	children: PropTypes.symbol
 };
 LoginSignUp.propTypes = {
-	isActive: PropTypes.bool
+	isActive: PropTypes.bool,
+	children: PropTypes.symbol
 };
