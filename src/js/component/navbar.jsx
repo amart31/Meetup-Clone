@@ -51,11 +51,11 @@ export default class NavBar extends React.Component {
 					color="light"
 					light
 					expand="md">
-					<Link to="/">
-						<img src={Logo} width="50" height="50" alt="logo" />
-					</Link>
-
-					<LoginModal />
+					<div className="nav-brand">
+						<Link to="/">
+							<img src={Logo} width="50" height="50" alt="logo" />
+						</Link>
+					</div>
 
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
@@ -116,6 +116,7 @@ export default class NavBar extends React.Component {
 							}}
 						</Context.Consumer>
 					</Collapse>
+					<LoginModal />
 				</Navbar>
 			</div>
 		);
