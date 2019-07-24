@@ -43,7 +43,6 @@ export default class NavBar extends React.Component {
 	}
 
 	render() {
-		//this methods says how the NavBar should look like in HTML
 		return (
 			<div>
 				<Navbar

@@ -51,7 +51,7 @@ export class LoginModal extends React.Component {
 									isOpen={this.state.modal}
 									toggle={this.toggle}>
 									<ModalHeader toggle={this.toggle}>
-										Modal title
+										Login
 									</ModalHeader>
 									<ModalBody>
 										{"Hello " + store.session.user_nicename}
@@ -60,7 +60,7 @@ export class LoginModal extends React.Component {
 										<Button
 											color="primary"
 											onClick={this.toggle}>
-											Do Something
+											Login
 										</Button>{" "}
 										<Button
 											color="secondary"
@@ -76,38 +76,38 @@ export class LoginModal extends React.Component {
 									isOpen={this.state.modal}
 									toggle={this.toggle}>
 									<ModalHeader toggle={this.toggle}>
-										Modal title
+										Login
 									</ModalHeader>
 
 									<ModalBody>
 										<FormGroup>
-											<Label for="exampleEmail">
-												Email
+											<Label for="username">
+												Username
 											</Label>
 											<Input
-												type="email"
-												name="email"
-												id="exampleEmail"
-												placeholder="with a placeholder"
+												type="text"
+												name="username"
+												id="username"
+												placeholder="Your username"
 											/>
 										</FormGroup>
 										<FormGroup>
-											<Label for="examplePassword">
+											<Label for="password">
 												Password
 											</Label>
 											<Input
 												type="password"
 												name="password"
-												id="examplePassword"
-												placeholder="password placeholder"
+												id="password"
+												placeholder="Your password"
 											/>
 										</FormGroup>
 									</ModalBody>
 									<ModalFooter>
 										<Button
 											color="primary"
-											onClick={this.toggle}>
-											Do Something
+											onClick={actions.login}>
+											Login
 										</Button>{" "}
 										<Button
 											color="secondary"

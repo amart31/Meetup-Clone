@@ -37,6 +37,12 @@ const Events = props => {
 			<Context.Consumer>
 				{({ store, actions }) => {
 					return store.events.map((item, index) => {
+						{
+							/* let meetupName = actions.getMeetupName(
+							item.meta_keys._meetup
+						).post_title;  */
+						}
+
 						return (
 							<div
 								className="d-flex flex-row justify-content-center"
@@ -45,7 +51,7 @@ const Events = props => {
 									<CardBody>
 										<CardTitle>
 											<Link to={"/event/" + index}>
-												<span>{item.post_title}</span>
+												{item.post_title}
 											</Link>
 										</CardTitle>
 
@@ -64,18 +70,13 @@ const Events = props => {
 										</CardSubtitle>
 
 										<CardText>
-											<Link to={"/event/" + index}>
-												<span>{item.post_title}</span>
-											</Link>
-											<Link
+											{/*<Link
 												to={
 													"/meetup/" +
 													item.meta_keys._meetup
 												}>
-												{actions.getMeetupName(
-													item.meta_keys._meetup
-												)}
-											</Link>
+												{meetupName}
+											</Link> */}
 										</CardText>
 										<Button>Button</Button>
 									</CardBody>

@@ -7,7 +7,6 @@ const getState = ({ getStore, setStore }) => {
 			session: {
 				isLoggedIn: false,
 				token: "",
-				user_display_name: "",
 				user_email: "",
 				user_nicename: ""
 			}
@@ -15,7 +14,7 @@ const getState = ({ getStore, setStore }) => {
 		actions: {
 			login: (user, pass) => {
 				const endpoint =
-					"https://wordpress-project-amart31.c9users.io/wp-json/jwt-auth/v1/token";
+					"https://8080-b126db93-61fd-461f-bd60-c39ef7e847a3.ws-us0.gitpod.io/wp-json/jwt-auth/v1/token";
 
 				//fetch session
 				fetch(endpoint, {
@@ -38,6 +37,7 @@ const getState = ({ getStore, setStore }) => {
 
 							store.session = data;
 							store.session.isLoggedIn = true;
+							console.log(data);
 							setStore({
 								store
 							});
@@ -65,6 +65,7 @@ const getState = ({ getStore, setStore }) => {
 				});
 
 				if (meetupArr !== []) {
+					console.log(meetupArr[0]);
 					return meetupArr[0];
 				}
 			}

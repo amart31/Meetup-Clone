@@ -4,7 +4,7 @@ import ScrollToTop from "./component/functional/scrollToTop.jsx";
 
 import { Meetups } from "./views/meetups.jsx";
 import Events from "./views/events.jsx";
-import { Event } from "./views/event.jsx";
+import Event from "./views/event.jsx";
 import { Meetup } from "./views/meetup.jsx";
 
 import Store from "./store/appContext.jsx";
