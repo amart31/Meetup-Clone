@@ -47,12 +47,6 @@ const getState = ({ getStore, setStore }) => {
 						alert("Fetch error: ", err);
 					});
 			},
-
-			switchPanel: newPanel => {
-				this.setState({
-					activePanel: newPanel
-				});
-			},
 			meetupEventsList: (meetupID, index) => {
 				const store = getStore();
 

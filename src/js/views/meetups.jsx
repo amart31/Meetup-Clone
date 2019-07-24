@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext.jsx";
 
-import "../../styles/demo.css";
-
 export class Meetups extends React.Component {
 	render() {
 		return (
