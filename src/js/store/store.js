@@ -57,18 +57,20 @@ const getState = ({ getStore, setStore }) => {
 				return events;
 			},
 
-			getMeetupName: (meetupId, index) => {
+			getMeetupName: meetupId => {
 				const store = getStore();
+				
+	
+					if (store.meetups !== []) {
+						const meetup = store.meetups.find(item => {
+							return item.ID == meetupId;
+						});
+						return meetup;
+					
 
-				let meetupArr = store.meetups.filter(meetup => {
-					if (meetupId == meetup.ID) return meetup.post_title;
-				});
-
-				if (meetupArr !== []) {
-					console.log(meetupArr[0]);
-					return meetupArr[0];
-				}
+				
 			}
+		}
 		}
 	};
 };

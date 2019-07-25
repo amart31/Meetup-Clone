@@ -19,21 +19,11 @@ const Event = props => {
 										<div className="col-9">
 											<p className="lead">
 												<Moment format="MMM Do">
-													{
-														store.events[
-															this.props.match
-																.params.theid
-														].meta_keys.day
-													}
+													{store.events.meta_keys.day}
 												</Moment>
 											</p>
 											<h1 className="display-4">
-												{
-													store.events[
-														this.props.match.params
-															.theid
-													].post_title
-												}
+												{store.events.post_title}
 											</h1>
 											<p className="lead">Meetup Name</p>
 											<Link to="/">
@@ -80,14 +70,7 @@ const Event = props => {
 								</div>
 								<div className="row">
 									<div className="col-8">
-										<p>
-											{
-												store.events[
-													this.props.match.params
-														.theid
-												].post_content
-											}
-										</p>
+										<p>{store.events.post_content}</p>
 									</div>
 									<div className="col-4">
 										<Moment format="LT" parse="HH:mm:ss">
@@ -100,12 +83,7 @@ const Event = props => {
 										</Moment>
 										<br />
 										<Moment format="MMM Do">
-											{
-												store.events[
-													this.props.match.params
-														.theid
-												].meta_keys.day
-											}
+											{store.events.meta_keys.day}
 										</Moment>
 									</div>
 								</div>

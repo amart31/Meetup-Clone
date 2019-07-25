@@ -3,6 +3,7 @@
 	"version": "1.0.1",
 	"description": "",
 	"main": "index.js",
+	"homepage": "https://amart31.github.io/Meetup-Clone/",
 	"scripts": {
 		"c9": "webpack-dev-server --mode development --open --host $IP --port $PORT",
 		"dev-server": "webpack-dev-server --mode development --hot",

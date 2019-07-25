@@ -17,7 +17,8 @@ import {
 	Button
 } from "reactstrap";
 
-const Events = props => {
+const Events = () => {
+	
 	return (
 		<Container>
 			<div>
