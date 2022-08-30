@@ -58,7 +58,7 @@
 		"events": "^1.1.1",
 		"jquery": "^3.3.1",
 		"moment": "^2.24.0",
-		"moment-timezone": "^0.5.23",
+		"moment-timezone": "^0.5.35",
 		"popper.js": "^1.12.9",
 		"prop-types": "^15.6.1",
 		"query-string": "^5.1.1",
